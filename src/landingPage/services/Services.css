@@ -1,0 +1,125 @@
+.services-page {
+  padding: 60px 20px;
+  background-color: #fefefe;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #80315d;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  color: #502749;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin: 10px 0;
+}
+
+.description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.btn-enquire {
+   display: flex;
+  gap: 10px; /* Controls spacing between buttons */
+  justify-content: center;
+  margin-top: 10px;
+  background-color: #802956;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enquire:hover {
+  background-color: #6a1f45;
+}
+
+
+/* Contact Button */
+.contact-blink-btn {
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  height: 50px;
+  width: 80%; /* Responsive width */
+  max-width: 500px; /* Limit on large screens */
+  background-color: #802956;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: blink 1.5s infinite;
+  box-shadow: 0 0 10px rgba(128, 41, 86, 0.5);
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.contact-blink-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(128, 41, 86, 0.8);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Optional: Further optimization for very small screens */
+@media screen and (max-width: 400px) {
+  .contact-blink-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    height: 45px;
+  }
+}

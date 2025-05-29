@@ -1,0 +1,242 @@
+
+/*  Set Font Size over web page*/
+@media (max-width: 576px) {
+  body {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p, li, a {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Animation Keyframes for button*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(128, 41, 86, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(128, 41, 86, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(128, 41, 86, 0);
+  }
+}
+
+/* Apply animation */
+.btn-contact {
+  background-color: #802956;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.btn-contact.hovered {
+  background-color: #a33c73;
+}
+
+
+/* Container and Background */
+        .container {
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 3rem 1rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .background {
+          position: relative;
+          min-height: 100vh;
+          background: linear-gradient(to bottom, #2563eb, #1e40af); /* blue-600 to blue-800 */
+          overflow: hidden;
+          color: white;
+          font-family: system-ui, sans-serif;
+        }
+
+        /* Curved SVG Bottom */
+        .curved-bottom {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        /* Flex container for main content */
+        .flex-row {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        /* Left Content */
+        .left-content {
+          flex: 1 1 100%;
+          max-width: 100%;
+          transition: all 1s ease;
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        .left-content.visible {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        /* Right Content */
+        .right-content {
+          flex: 1 1 100%;
+          max-width: 100%;
+          margin-top: 3rem;
+          display: flex;
+          justify-content: center;
+          transition: all 1s ease;
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        .right-content.visible {
+          transform: translateX(0);
+          opacity: 1;
+          margin-top: 0;
+        }
+
+        /* Responsive for md and up */
+        @media (min-width: 768px) {
+          .left-content, .right-content {
+            flex: 1 1 48%;
+            max-width: 48%;
+          }
+          .right-content {
+            margin-top: 0;
+          }
+        }
+
+        /* Headings and paragraph */
+        h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+        }
+        @media (min-width: 768px) {
+          h1 {
+            font-size: 4rem;
+          }
+        }
+        p {
+          font-size: 1.125rem;
+          max-width: 24rem;
+          margin-bottom: 2rem;
+          line-height: 1.5;
+        }
+
+        /* Button */
+        .btn-contact {
+          background-color: white;
+          color: #2563eb; /* blue-700 */
+          padding: 0.75rem 2rem;
+          border-radius: 0.375rem;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-contact:hover, .btn-contact.hovered {
+          transform: scale(1.05);
+          box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+        }
+
+        /* Floating Icons */
+        .floating-icon {
+          position: absolute;
+          color: #bfdbfe; /* blue-200 */
+          opacity: 0.5;
+          animation: float 3s ease-in-out infinite;
+          /* animation-delay will be inline */
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
+        }
+
+        /* Infinity pulse */
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.9; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pulse {
+          animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Infinity container */
+        .infinity-container {
+          position: relative;
+          width: 16rem;
+          height: 16rem;
+        }
+
+        /* Infinity SVG path */
+        .infinity-path {
+          fill: none;
+          stroke: #62c9ff;
+          stroke-width: 5;
+        }
+
+        /* Rotating Icons around Infinity */
+        .orbit-icon {
+          position: absolute;
+          padding: 0.75rem;
+          border-radius: 0.5rem;
+          background-color: #3b82f6; /* blue-500 */
+          box-shadow: 0 5px 15px rgba(59,130,246,0.4);
+          transition: all 0.5s ease;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: default;
+          transform-origin: center center;
+          font-size: 1.5rem; /* size of icons */
+        }
+        .orbit-icon.active {
+          transform: scale(1.25);
+          background-color: #60a5fa; /* blue-400 */
+          box-shadow: 0 8px 20px rgba(96,165,250,0.7);
+        }
+
+        /* White icon color */
+        .icon-white > * {
+          stroke: white !important;
+          fill: white !important;
+        }
+
+
+        /* Showcase Styles here */
+
+        

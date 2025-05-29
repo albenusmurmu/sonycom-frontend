@@ -1,0 +1,55 @@
+
+/* Navbar.css */
+.dropdown-menu {
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  display: block; /* allow manual control */
+  pointer-events: none;
+  position: absolute;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+
+@media (max-width: 992px) {
+  #navbarSupportedContent {
+    width: 100%;
+     /* match the navbar color */
+     background-color: #f6f3ed;
+    padding: 1rem;
+  }
+
+ @media (max-width: 576px) {
+  .navbar {
+    min-height: 5rem; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+
+
+  .navbar-nav {
+    align-items: flex-end !important;
+  }
+}
+
