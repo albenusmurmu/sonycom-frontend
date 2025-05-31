@@ -81,12 +81,14 @@ function Navbar() {
               <a
                 className="nav-link active"
                 href="https://my-portfolio-9r9a.onrender.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeNavbar}
               >
                 Portfolio
               </a>
             </li>
+
             <li className="nav-item">
               <Link className="nav-link active" to="/Contact" onClick={closeNavbar}>
                 Contact
