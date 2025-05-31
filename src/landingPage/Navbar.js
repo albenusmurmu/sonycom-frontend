@@ -80,7 +80,7 @@ function Navbar() {
             <li className="nav-item">
               <a
                 className="nav-link active"
-                href="http://127.0.0.1:5500/dashboard/src/MyPortfolio/index.html"
+                href="https://my-portfolio-9r9a.onrender.com"
                 onClick={closeNavbar}
               >
                 Portfolio
