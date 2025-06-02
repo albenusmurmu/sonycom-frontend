@@ -4,6 +4,8 @@ Welcome to the **SonyCom** frontend repository — the digital face of a startup
 
 > “Built to Empower Minds. Built with Vision.” 🚀
 
+> 🌐 **Live Site:** [Click here to view](https://sonycom-frontend.onrender.com)  
+
 ---
 
 ## 🔥 What is SonyCom?
@@ -103,7 +105,7 @@ At SonyCom, we believe every person has the potential to be a creator, explorer,
 [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/albenusmurmu)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white)](https://instagram.com/albenus.pieter)
 
+---
 
-
-
+Made with 💖 by Albenus Peter
 
