@@ -76,21 +76,26 @@ sonycom-frontend/
 
 Follow these steps to run SonyCom locally:
 
-```bash
-# 1. Clone the repository
-  git clone https://github.com/albenusmurmu/sonycom-frontend.git
+1. **Clone the repository**
+  ```bash
+   git clone https://github.com/albenusmurmu/sonycom-frontend.git
+```
 
-# 2. Navigate into the directory
-  cd sonycom-frontend
+2. **Navigate into the directory**
+   ```
+   cd sonycom-frontend
 
-# 3. Install dependencies
-  npm install
+3. **Install dependencies**
+   ```
+   npm install
 
-# 4. Start the dev server
-  npm start
+4. **Start the dev server**
+   ```
+   npm start
 
 Access the app at: http://localhost:3000
-```
+
+---
 
 ## 🎯 Vision
 
