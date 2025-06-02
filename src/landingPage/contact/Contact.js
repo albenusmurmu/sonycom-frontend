@@ -22,7 +22,7 @@ function Contact() {
         const { name, email, subject, message } = formData;
 
         try {
-            const response = await fetch('http://localhost:5000/api/v1/contact', {
+            const response = await fetch('https://sonycom-backend.onrender.com/api/v1/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, subject, message }),
