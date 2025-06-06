@@ -80,7 +80,7 @@ function Navbar() {
             <li className="nav-item">
               <a
                 className="nav-link active"
-                href="https://my-portfolio-9r9a.onrender.com"
+                href="https://my-portfolio-g1uw.onrender.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeNavbar}

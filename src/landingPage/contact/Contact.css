@@ -161,8 +161,8 @@
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background-color: #fff;
-  color: #667eea;
+  background-color: #667eea;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -173,6 +173,7 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background-color: #f0f0f0;
+  color: #000;
 }
 
 /* === Responsive Design === */
