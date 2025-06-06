@@ -1,70 +1,207 @@
-/* Contact.css */
+/* Import a nice font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+/* Define keyframes for animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* === Main Container Styling === */
 .contact-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden; /* Prevents scrollbars during animation */
 }
 
+/* === Form Styling (Glassmorphism) === */
 .contact-form {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-.contact-title {
-    text-align: center;
+.contact-form h2 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* animated contact-form -> p */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-form p {
+  text-align: center !important;
+  margin-bottom: 30px;
+  font-weight: 300;
+  opacity: 0.9;
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+
+/* === Form Group & Label Styling === */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Style for the date label, which shouldn't float */
+.form-group .date-label {
+  position: static;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+
+/* Floating label effect */
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: #fff;
+  background: #764ba2; /* Match a color from the gradient */
+  padding: 0 5px;
+  border-radius: 3px;
+}
+
+/* === Input, Textarea, Select Styling === */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Special styling for the date input to show calendar icon */
+.form-group input[type="date"] {
+  color-scheme: dark; /* Helps with native date picker UI on dark backgrounds */
+}
+
+/* === Phone Group Styling === */
+.phone-group {
+  display: flex;
+  gap: 10px;
+}
+
+.country-code-select {
+  flex-basis: 120px; /* Give the select a fixed base width */
+  flex-shrink: 0;
+}
+
+.phone-group input {
+  flex-grow: 1; /* The phone number input takes the rest of the space */
+}
+
+/* === Button Styling === */
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #667eea;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 30px;
+  }
+
+  .contact-form h2 {
     font-size: 2rem;
-    color: #4f46e5;
-    margin-bottom: 1.5rem;
+  }
 }
 
-.contact-input,
-.contact-textarea {
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 10px;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+
+  /* Stack phone inputs on very small screens if needed */
+  .phone-group {
+    flex-direction: column;
+  }
+
+  .country-code-select {
+    flex-basis: auto; /* Reset basis */
     width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.75rem;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.contact-input:focus,
-.contact-textarea:focus {
-    border-color: #4f46e5;
-    outline: none;
-}
-
-.contact-textarea {
-    resize: none;
-    height: 120px;
-}
-
-.contact-button {
-    width: 100%;
-    background-color: #4f46e5;
-    color: white;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #4338ca;
+  }
 }
