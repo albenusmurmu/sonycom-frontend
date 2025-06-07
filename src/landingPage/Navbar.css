@@ -1,55 +1,101 @@
-
-/* Navbar.css */
-.dropdown-menu {
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  display: block; /* allow manual control */
-  pointer-events: none;
-  position: absolute;
+/* General Navbar Styling */
+.navbar {
+  background-color: #f6f3ed !important;
+  height: 80px;
+  padding: 0 1rem;
+  transition: background-color 0.3s ease;
+  z-index: 1050; /* Ensure it's above other content */
 }
 
-.dropdown-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0px);
-  pointer-events: auto;
+.navbar-brand-name {
+  color: rgba(128, 41, 86, 0.8);
+  letter-spacing: 0.2rem;
 }
 
-.dropdown-item {
-  padding: 10px 20px;
+.navbar-logo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+/* Styling for Nav Links */
+.nav-link {
+  color: #555;
   font-weight: 500;
-  color: #333;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
-.dropdown-item:hover {
-  background-color: #f1f1f1;
+.nav-link:hover,
+.nav-link:focus {
+  color: #802956;
 }
 
+/* This class is automatically added by NavLink for the active route */
+.nav-link.active {
+  color: #802956;
+  font-weight: 700;
+}
 
+/* Customizing the mobile menu toggler */
+.navbar-toggler {
+  border: none;
+}
 
+.navbar-toggler:focus {
+  box-shadow: none; /* Removes the blue outline on click */
+}
 
-@media (max-width: 992px) {
-  #navbarSupportedContent {
+/* ==========================================================================
+   Mobile Responsive Styles (for screens smaller than large devices)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  /* When the mobile menu is open, it takes up the full width */
+  .navbar-collapse.show {
+    position: absolute;
+    top: 100%; /* Position it right below the 80px navbar */
+    left: 0;
+    right: 0;
     width: 100%;
-     /* match the navbar color */
-     background-color: #f6f3ed;
-    padding: 1rem;
+    background-color: #f6f3ed;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Adds a nice shadow */
+    border-bottom: 1px solid #ddd;
   }
-
- @media (max-width: 576px) {
-  .navbar {
-    min-height: 5rem; 
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-
-
+  
   .navbar-nav {
-    align-items: flex-end !important;
+    /* Align items to the center for a cleaner look on mobile */
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: 0.5rem 0; /* Adds spacing between menu items */
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem !important; /* Larger clickable area for touch */
+    border-radius: 8px;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    background-color: rgba(128, 41, 86, 0.08); /* Subtle background on hover/active */
   }
 }
 
+/* Optional: Adjustments for very small screens */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar-brand-name {
+    font-size: 1rem; /* Slightly smaller brand name */
+    letter-spacing: 0.1rem;
+  }
+}

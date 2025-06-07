@@ -1,101 +1,80 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css"; // Custom styles                                                                                    
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom"; // Use NavLink for active styles
+import "./Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Needed for Collapse to work
 
 function Navbar() {
-  // Function to close the mobile menu
-  const closeNavbar = () => {
-    const navbar = document.getElementById("navbarSupportedContent");
-    if (navbar.classList.contains("show")) {
-      const bsCollapse = new window.bootstrap.Collapse(navbar, { toggle: true });
-      bsCollapse.hide();
-    }
-  };
+  // State to manage whether the navbar is collapsed or expanded
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  // Toggles the state
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+  // Closes the menu when a link is clicked
+  const closeMenu = () => setIsNavCollapsed(true);
 
   return (
-    <nav
-      className="navbar navbar-expand-lg border-bottom"
-      style={{
-        backgroundColor: "#f6f3ed",
-        zIndex: 1000,
-        position: "sticky",
-        top: 0,
-        height: "80px",
-        padding: "0 2rem",
-        width: "100%",
-      }}
-    >
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        {/* Logo */}
-        <Link className="navbar-brand d-flex align-items-center" to="/" onClick={closeNavbar}>
+    <nav className="navbar navbar-expand-lg border-bottom sticky-top">
+      <div className="container-fluid">
+        {/* Logo and Brand Name */}
+        <Link className="navbar-brand d-flex align-items-center" to="/" onClick={closeMenu}>
           <img
             src="media/images/SonyConMainLogo.png"
             alt="Logo"
-            style={{
-              width: "3rem",
-              height: "3rem",
-              borderRadius: "50%",
-              marginRight: "0.5rem",
-            }}
+            className="navbar-logo"
           />
-          <span
-            className="ms-2 fw-bold"
-            style={{
-              color: "rgba(128, 41, 86, 0.8)",
-              letterSpacing: "0.2rem",
-            }}
-          >
-            SonyCom
-          </span>
+          <span className="navbar-brand-name ms-2 fw-bold">SonyCom</span>
         </Link>
 
-        {/* Toggle Button */}
+        {/* Toggle Button for Mobile */}
         <button
-          className="navbar-toggler"
+          className={`navbar-toggler ${!isNavCollapsed ? "" : "collapsed"}`}
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          aria-expanded={!isNavCollapsed}
           aria-label="Toggle navigation"
+          onClick={handleNavCollapse} // Use the state handler
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Nav Menu */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul className="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+        {/* The 'show' class is now controlled by React state */}
+        <div
+          className={`collapse navbar-collapse ${!isNavCollapsed ? "show" : ""}`}
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
             <li className="nav-item">
-              <Link className="nav-link active" to="/About" onClick={closeNavbar}>
+              {/* Use NavLink to get the .active class automatically */}
+              <NavLink className="nav-link" to="/About" onClick={closeMenu}>
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/blog" onClick={closeNavbar}>
+              <NavLink className="nav-link" to="/blog" onClick={closeMenu}>
                 Blog
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
+              {/* For external links, a standard <a> tag is correct */}
               <a
-                className="nav-link active"
+                className="nav-link"
                 href="https://my-portfolio-g1uw.onrender.com"
-                onClick={closeNavbar}
+                onClick={closeMenu}
               >
                 Portfolio
               </a>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link active" to="/Contact" onClick={closeNavbar}>
+              <NavLink className="nav-link" to="/Contact" onClick={closeMenu}>
                 Contact
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/services" onClick={closeNavbar}>
+              <NavLink className="nav-link" to="/services" onClick={closeMenu}>
                 Services
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
