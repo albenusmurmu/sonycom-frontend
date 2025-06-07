@@ -81,8 +81,6 @@ function Navbar() {
               <a
                 className="nav-link active"
                 href="https://my-portfolio-g1uw.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={closeNavbar}
               >
                 Portfolio
